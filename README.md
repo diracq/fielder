@@ -109,6 +109,7 @@ When *Fielder* is applied to a type, it will generate public functions/methods a
     * `<Type><Suffix>Strings` returns a slice with all the strings of the ENUM.
     * `New<Type><Suffix>` returns a new collection with all the values of the ENUM.
     * `New<Type><Suffix>With` returns a new collection with the given values of the ENUM.
+* Method `<Type>::GetField(<Type><Suffix>)` returns the struct's value for the given ENUM field.
 
 ## Inspiring projects
   * [enumer](https://github.com/dmarkham/enumer)
