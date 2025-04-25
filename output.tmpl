@@ -37,6 +37,17 @@ func (x {{ $fieldType }}) String() string {
    return string(x)
 }
 
+// GetField returns the value of the underlying field for the enum in the struct
+func (s *{{ .Type }}) GetField(field {{ $fieldType }}) any {
+	switch field {
+	{{ range .Fields -}}
+	case {{ $fieldType }}{{ .Name }}:
+		return s.{{ .Name }}
+	{{ end }}
+	}
+	panic("invalid field for {{ .Type }}")
+}
+
 // *********************************************************************************************************************
 
 // {{ $fieldListType }} represents a collection of {{ $fieldType }}.
